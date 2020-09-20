@@ -16,7 +16,7 @@ class MerchantsTableSeeder extends Seeder
     public function run()
     {
         DB::table('merchants')->insert([
-            'email' => 'dev@5degrees.ch',
+            'email' => 'v.demiri1997@gmail.com',
             'password' => bcrypt('P@$$w0rd'),
             'api_token' => md5(uniqid(Str::random(), true)),
             'created_at' => date('Y-m-d H:i:s'),

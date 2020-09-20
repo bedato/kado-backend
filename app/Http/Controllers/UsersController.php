@@ -10,6 +10,7 @@ use App\Repositories\Merchant\MerchantsRepositoryInterface;
 use App\Repositories\User\UsersRepositoryInterface;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Lang;
 
 class UsersController extends ApiController
@@ -71,5 +72,48 @@ class UsersController extends ApiController
         $this->usersRepository->createUser($data);
 
         return response()->json(['status' => Lang::get('messages.users.store_success')]);
+    }
+
+    /**
+     * Delete user.
+     *
+     * @param int     $id      - user id
+     * @param Request $request - Incoming request
+     *
+     * @return Illuminate\Http\JsonResponse
+     */
+    public function destroy(int $id, Request $request): JsonResponse
+    {
+        $merchant = $this->merchantsRepository->getByToken(
+            $request->header('X-Access-Token')
+        );
+
+        $user = $this->usersRepository->getByUserCode(
+            $merchant->id,
+            $request->header('X-User-Code')
+        );
+
+        $effective_user = $this->usersRepository->getById($id);
+
+        if (!$effective_user) {
+            return response()->json([
+                'success' => false,
+                'message' => Lang::get('messages.user.not_found')
+            ]);
+        }
+
+        if ($effective_user->user_id != $user->id) {
+            return response()->json([
+                'success' => false,
+                'message' => Lang::get('messages.user.not_allowed')
+            ]);
+        }
+
+        $this->usersRepository->deleteUser($id);
+
+        return response()->json([
+            'success' => true,
+            'message' => Lang::get('messages.users.user_deleted')
+        ]);
     }
 }

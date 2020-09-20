@@ -165,6 +165,7 @@ class UsersRepository implements UsersRepositoryInterface
      */
     public function createUser(array $parameters): void
     {
+        $parameters['password'] = bcrypt($parameters['password']);
         $this->user->create($parameters);
     }
 

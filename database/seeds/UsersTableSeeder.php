@@ -20,6 +20,9 @@ class UsersTableSeeder extends Seeder
             [
                 'merchant_id' => 1,
                 'user_code' => $faker->uuid,
+                'username' => $faker->username,
+                'password' => Hash::make('localhostPassword'),
+                'email' => $faker->email,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
                 'deleted_at' => null

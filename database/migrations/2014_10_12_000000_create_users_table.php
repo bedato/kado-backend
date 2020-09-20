@@ -18,6 +18,9 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('merchant_id');
             $table->string('user_code')->index();
+            $table->string('username');
+            $table->string('password');
+            $table->string('email');
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
 
