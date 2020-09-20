@@ -28,6 +28,9 @@ class UserResource extends JsonResource
 
         return [
             'user_code' => $user->user_code,
+            'username' => $user->username,
+            'password' => $user->password,
+            'email' => $user->email,
             'created_at' => $this->formatDate($user->created_at),
             'updated_at' => $this->formatDate($user->updated_at),
             'deleted_at' => $deletedAt

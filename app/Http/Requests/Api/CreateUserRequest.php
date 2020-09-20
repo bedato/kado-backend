@@ -27,7 +27,10 @@ class CreateUserRequest extends JsonRequest
     public function rules()
     {
         return [
-            'user_code' => ['required', 'unique:users,user_code']
+            'user_code' => ['required', 'unique:users,user_code'],
+            'username' => ['required', 'string', 'unique:users,username'],
+            'password' => ['required', 'string'],
+            'email' => ['required', 'email', 'unique:users', 'email']
         ];
     }
 

@@ -21,11 +21,23 @@ class User extends Model
     protected $fillable = [
         'merchant_id',
         'user_code',
+        'username',
+        'password',
+        'email',
         'created_at',
         'updated_at'
     ];
 
-    protected $hidden = ['merchant_id'];
+    protected $hidden = ['password', 'remember_token', 'merchant_id'];
+
+    public function getAuthIdentifier()
+    {
+        return $this->getKey();
+    }
+    public function getAuthPassword()
+    {
+        return $this->password;
+    }
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
