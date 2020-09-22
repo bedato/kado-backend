@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Database\Seeders\StylesTableSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +17,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             MerchantsTableSeeder::class,
-            UsersTableSeeder::class
+            UsersTableSeeder::class,
+            StylesTableSeeder::class,
+            ColorsTableSeeder::class,
+            ItemsTableSeeder::class,
         ]);
     }
 }
