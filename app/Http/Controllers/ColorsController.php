@@ -16,7 +16,7 @@ class ColorsController extends ApiController
     private $color;
 
     /**
-     * ColorssController constructor.
+     * ColorsController constructor.
      *
      * @param ColorsRepositoryInterface $colorsRepository
      */

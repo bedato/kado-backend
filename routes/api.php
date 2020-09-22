@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'api', 'namespace' => 'Api'], function () {
     Route::apiResources([
         'merchants' => 'MerchantsController',
-        'colors' => 'ColorsController'
+        'colors' => 'ColorsController',
+        'items' => 'ItemsController'
     ]);
 
     Route::group(['prefix' => 'users'], function () {
