@@ -22,6 +22,11 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\User\UsersRepositoryInterface',
             'App\Repositories\User\UsersRepository'
         );
+
+        $this->app->bind(
+            'App\Repositories\Color\ColorsRepositoryInterface',
+            'App\Repositories\Color\ColorsRepository'
+        );
     }
 
     /**
