@@ -8,7 +8,8 @@ Route::group(['middleware' => 'api', 'namespace' => 'Api'], function () {
     Route::apiResources([
         'merchants' => 'MerchantsController',
         'colors' => 'ColorsController',
-        'items' => 'ItemsController'
+        'items' => 'ItemsController',
+        'styles' => 'StylesController'
     ]);
 
     Route::group(['prefix' => 'users'], function () {

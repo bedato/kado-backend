@@ -32,6 +32,11 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\Item\ItemsRepositoryInterface',
             'App\Repositories\Item\ItemsRepository'
         );
+
+        $this->app->bind(
+            'App\Repositories\Style\StylesRepositoryInterface',
+            'App\Repositories\Style\StylesRepository'
+        );
     }
 
     /**
