@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Database\Seeders;
+
 use Database\Seeders\StylesTableSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +23,7 @@ class DatabaseSeeder extends Seeder
             StylesTableSeeder::class,
             ColorsTableSeeder::class,
             ItemsTableSeeder::class,
+            ShapesTableSeeder::class
         ]);
     }
 }
