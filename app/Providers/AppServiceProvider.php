@@ -47,6 +47,11 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\Outfit\OutfitsRepositoryInterface',
             'App\Repositories\Outfit\OutfitsRepository'
         );
+
+        $this->app->bind(
+            'App\Repositories\Post\PostsRepositoryInterface',
+            'App\Repositories\Post\PostsRepository'
+        );
     }
 
     /**
