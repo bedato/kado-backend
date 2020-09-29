@@ -6,6 +6,8 @@ namespace App\Repositories\User;
 
 use ArrayAccess;
 use App\Models\User;
+use App\Models\Item;
+use App\Models\Outfit;
 use Illuminate\Support\Str;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
@@ -23,15 +25,21 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 class UsersRepository implements UsersRepositoryInterface
 {
     protected $user;
+    protected $item;
+    protected $outfit;
 
     /**
      * UsersRepository constructor.
      *
      * @param User $user - instantiate Model
+     * @param Item $item - instantiate Model
+     * @param Outfit $outfit - instantiate Model
      */
-    public function __construct(User $user)
+    public function __construct(User $user, Item $item, Outfit $outfit)
     {
         $this->user = $user;
+        $this->item = $item;
+        $this->outfit = $outfit;
     }
 
     /**
@@ -128,8 +136,9 @@ class UsersRepository implements UsersRepositoryInterface
      */
     public function getById(int $id): User
     {
-        return $this->user->findOrFail($id);
+        return User::with('items')->with('outfits')->findOrFail($id);
     }
+
 
     /**
      * Retrieve total count of users.

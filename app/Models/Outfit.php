@@ -6,17 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model
+class Outfit extends Model
 {
-    protected $table = 'items';
+    protected $table = 'outfits';
 
     protected $fillable = [
         'user_id',
-        'category',
+        'winterjacket_id',
+        'jacket_id',
+        'top_id',
+        'bottom_id',
+        'image_url',
         'season',
-        'color',
         'style',
-        'shape',
         'created_at',
         'updated_at'
     ];

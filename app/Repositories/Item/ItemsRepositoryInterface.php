@@ -31,6 +31,15 @@ interface ItemsRepositoryInterface
     public function getById(int $id): Item;
 
     /**
+     * Retrieve item by Id.
+     *
+     * @param int $userId - id of the user to search by.
+     *
+     * @return Item
+     */
+    public function getByUserId(int $userId): ArrayAccess;
+
+    /**
      * Retrieve total count of items.
      *
      * @return int

@@ -6,6 +6,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Model
 {
@@ -24,6 +25,8 @@ class User extends Model
         'username',
         'password',
         'email',
+        'items',
+        'outfits',
         'created_at',
         'updated_at'
     ];
@@ -41,6 +44,26 @@ class User extends Model
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
+
+    /**
+     * Model has many items.
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function items(): hasMany
+    {
+        return $this->hasMany(Item::class, 'user_id');
+    }
+
+    /**
+     * Model has many outfits.
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function outfits(): hasMany
+    {
+        return $this->hasMany(Outfit::class, 'user_id');
+    }
 
     /**
      * Modify date format.
