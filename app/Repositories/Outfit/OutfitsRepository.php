@@ -2,43 +2,43 @@
 
 declare(strict_types=1);
 
-namespace App\Repositories\Item;
+namespace App\Repositories\Outfit;
 
 use ArrayAccess;
-use App\Models\Item;
+use App\Models\Outfit;
 
-class ItemsRepository implements ItemsRepositoryInterface
+class OutfitsRepository implements OutfitsRepositoryInterface
 {
-    protected $items;
+    protected $outfits;
 
     /**
-     * ItemsRepository constructor.
+     * OutfitsRepository constructor.
      *
-     * @param Item $items - instantiate Model
+     * @param Outfit $outfits - instantiate Model
      */
-    public function __construct(Item $items)
+    public function __construct(Outfit $outfits)
     {
-        $this->items = $items;
+        $this->outfits = $outfits;
     }
 
     /**
-     * Retrieve all items.
+     * Retrieve all outfits.
      *
-     * @return ArrayAccess<Item>
+     * @return ArrayAccess<Outfit>
      */
     public function getAll(): ArrayAccess
     {
-        return $this->items->all();
+        return $this->outfits->all();
     }
 
     /**
-     * Retrieve items that correspond to criteria.
+     * Retrieve outfits that correspond to criteria.
      *
-     * @return ArrayAccess<Item>
+     * @return ArrayAccess<Outfit>
      */
-    public function searchItems(array $searchCriteria): ArrayAccess
+    public function searchOutfits(array $searchCriteria): ArrayAccess
     {
-        $search = $this->items->query();
+        $search = $this->outfits->query();
 
         $sortBy = null;
         $sortRule = null;
@@ -76,19 +76,10 @@ class ItemsRepository implements ItemsRepositoryInterface
             unset($searchCriteria['user_id']);
         }
 
-        if (array_key_exists('category', $searchCriteria)) {
-            $search = $search->where('category', $searchCriteria['category']);
-            unset($searchCriteria['category']);
-        }
 
         if (array_key_exists('season', $searchCriteria)) {
             $search = $search->where('season', $searchCriteria['season']);
             unset($searchCriteria['season']);
-        }
-
-        if (array_key_exists('color', $searchCriteria)) {
-            $search = $search->where('color', $searchCriteria['color']);
-            unset($searchCriteria['color']);
         }
 
         if (array_key_exists('style', $searchCriteria)) {
@@ -111,17 +102,17 @@ class ItemsRepository implements ItemsRepositoryInterface
     }
 
     /**
-     * Retrieve Item by Id.
+     * Retrieve Outfit by Id.
      *
-     * @return Item
+     * @return Outfit
      */
-    public function getById(int $id): Item
+    public function getById(int $id): Outfit
     {
-        return $this->items->findOrFail($id);
+        return $this->outfits->findOrFail($id);
     }
 
     /**
-     * Retrieve item by user Id.
+     * Retrieve outfit by user Id.
      *
      * @param int $userId - id of the record to retrieve
      *
@@ -129,55 +120,55 @@ class ItemsRepository implements ItemsRepositoryInterface
      */
     public function getByUserId(int $userId): ArrayAccess
     {
-        return $this->items->where('user_id', $userId)->get();
+        return $this->outfits->where('user_id', $userId)->get();
     }
 
     /**
-     * Retrieve total count of items.
+     * Retrieve total count of outfits.
      *
      * @return int
      */
     public function getTotal(): int
     {
-        return $this->items->count();
+        return $this->outfits->count();
     }
 
     /**
-     * Update item with provided parameters.
+     * Update outfit with provided parameters.
      *
-     * @param int   itemId     - id of the record.
+     * @param int   outfitId     - id of the record.
      * @param array $parameters - data to update the record with.
      *
      * @return void
      */
-    public function updateItem(int $itemId, array $parameters): void
+    public function updateOutfit(int $outfitId, array $parameters): void
     {
-        $items = $this->getById($itemId);
+        $outfits = $this->getById($outfitId);
 
-        $items->update($parameters);
+        $outfits->update($parameters);
     }
 
     /**
-     * Create item with provided parameters.
+     * Create outfits with provided parameters.
      *
      * @param array $parameters - data to create record.
      *
      * @return void
      */
-    public function createItem(array $parameters): void
+    public function createOutfit(array $parameters): void
     {
-        $this->items->create($parameters);
+        $this->outfits->create($parameters);
     }
 
     /**
-     * Delete item with provided parameters.
+     * Delete outfit with provided parameters.
      *
-     * @param int $itemId - id of record to delete.
+     * @param int $outfitId - id of record to delete.
      *
      * @return void
      */
-    public function deleteItem(int $itemId): void
+    public function deleteOutfit(int $outfitId): void
     {
-        $this->items->destroy($itemId);
+        $this->outfits->destroy($outfitId);
     }
 }

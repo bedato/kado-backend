@@ -31,6 +31,8 @@ class UserResource extends JsonResource
             'username' => $user->username,
             'password' => $user->password,
             'email' => $user->email,
+            'items' => $user->items,
+            'outfits' => $user->outfits,
             'created_at' => $this->formatDate($user->created_at),
             'updated_at' => $this->formatDate($user->updated_at),
             'deleted_at' => $deletedAt

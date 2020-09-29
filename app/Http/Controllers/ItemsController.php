@@ -8,7 +8,9 @@ use App\Models\Item;
 use App\Http\Resources\ItemResource;
 use App\Http\Resources\ItemsResourceCollection;
 use App\Http\Requests\Api\SearchItemsRequest;
+use App\Http\Requests\Api\CreateItemRequest;
 use App\Repositories\Item\ItemsRepositoryInterface;
+use Illuminate\Http\JsonResponse;
 
 class ItemsController extends ApiController
 {
@@ -38,6 +40,18 @@ class ItemsController extends ApiController
         );
 
         return new ItemsResourceCollection($items);
+    }
+
+    /**
+     * Store item.
+     *
+     * @return Illuminate\Http\RedirectResponse
+     */
+    public function store(CreateItemRequest $request): JsonResponse
+    {
+        $this->itemsRepository->createItem($request->validated());
+
+        return Lang::get('admin.items.item_created');
     }
 
     /**
