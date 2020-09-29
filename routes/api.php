@@ -19,4 +19,10 @@ Route::group(['middleware' => 'api', 'namespace' => 'Api'], function () {
         Route::post('', 'UsersController@store');
         Route::delete('users/{id}', 'UsersController@destroy');
     });
+
+    Route::group(['middleware' => 'user'], function () {
+        Route::get('posts', 'PostsController@index');
+        Route::post('posts', 'PostsController@store');
+        Route::delete('posts/{id}', 'PostsController@destroy');
+    });
 });

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOutfitsTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,13 @@ class CreateOutfitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('outfits', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('outfit_id')->unsigned()->index();
             $table->unsignedInteger('user_id')->unsigned()->index();
-            $table->integer('winterjacket_id');
-            $table->integer('jacket_id')->nullable();
-            $table->integer('top_id')->nullable();
-            $table->integer('bottom_id')->nullable();
-            $table->string('image_url')->nullable();
-            $table->string('season')->nullable();
-            $table->string('style')->nullable();
             $table->timestamps();
 
+            $table->foreign('outfit_id')->references('id')->on('outfits');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
@@ -36,6 +31,6 @@ class CreateOutfitsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('outfits');
+        Schema::dropIfExists('posts_tables');
     }
 }
