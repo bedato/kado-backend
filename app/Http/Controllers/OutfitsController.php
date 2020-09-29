@@ -10,21 +10,32 @@ use App\Http\Resources\OutfitsResourceCollection;
 use App\Http\Requests\Api\SearchOutfitsRequest;
 use App\Http\Requests\Api\CreateOutfitRequest;
 use App\Repositories\Outfit\OutfitsRepositoryInterface;
+use App\Repositories\User\UsersRepositoryInterface;
+use App\Repositories\Merchant\MerchantsRepositoryInterface;
 use Illuminate\Http\JsonResponse;
 
 class OutfitsController extends ApiController
 {
     private $outfitsRepository;
     private $outfit;
+    protected $usersRepository;
+    protected $merchantRepository;
 
     /**
      * OutfitsController constructor.
      *
      * @param OutfitsRepositoryInterface $outfitsRepository
+     * @param UsersRepositoryInterface     $usersRepository
+     * @param MerchantsRepositoryInterface $merchantsRepository - Data repository
      */
-    public function __construct(OutfitsRepositoryInterface $outfitsRepository)
-    {
+    public function __construct(
+        OutfitsRepositoryInterface $outfitsRepository,
+        UsersRepositoryInterface $usersRepository,
+        MerchantsRepositoryInterface $merchantsRepository
+    ) {
         $this->repository = $outfitsRepository;
+        $this->usersRepository = $usersRepository;
+        $this->merchantsRepository = $merchantsRepository;
         $this->outfit = new Outfit();
     }
 
@@ -49,9 +60,21 @@ class OutfitsController extends ApiController
      */
     public function store(CreateOutfitRequest $request): JsonResponse
     {
-        $this->outfitsRepository->createOutfit($request->validated());
+        $merchant = $this->merchantsRepository->getByToken(
+            $request->header('X-Access-Token')
+        );
 
-        return Lang::get('admin.outfits.outfit_created');
+        $user = $this->usersRepository->getByUserCode(
+            $merchant->id,
+            $request->header('X-User-Code')
+        );
+
+        $data = $request->validated();
+        $data['user_id'] = $user->id;
+
+        $this->repository->createOutfit($data);
+
+        return response()->json('messages.outfits.store_success');
     }
 
     /**
