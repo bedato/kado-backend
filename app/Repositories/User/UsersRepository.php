@@ -174,6 +174,7 @@ class UsersRepository implements UsersRepositoryInterface
      */
     public function createUser(array $parameters): void
     {
+        $parameters['user_code'] = Str::uuid();
         $parameters['password'] = bcrypt($parameters['password']);
         $this->user->create($parameters);
     }

@@ -9,6 +9,7 @@ use App\Http\Requests\Api\CreateUserRequest;
 use App\Repositories\Merchant\MerchantsRepositoryInterface;
 use App\Repositories\User\UsersRepositoryInterface;
 use App\Http\Resources\UserResource;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Lang;
@@ -70,8 +71,9 @@ class UsersController extends ApiController
         $data['merchant_id'] = $merchant->id;
 
         $this->usersRepository->createUser($data);
+        $user = User::where('email', $data['email'])->first();
 
-        return response()->json(['status' => Lang::get('messages.users.store_success')]);
+        return response()->json(['status' => Lang::get('messages.users.store_success'), 'user_code' => $user->user_code]);
     }
 
     /**

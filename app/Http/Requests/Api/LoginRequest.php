@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Requests\Api;
 
 use App\Infrastructure\Requests\JsonRequest;
-use Lang;
 
-class CreateUserRequest extends JsonRequest
+class LoginRequest extends JsonRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,16 +26,8 @@ class CreateUserRequest extends JsonRequest
     public function rules()
     {
         return [
-            'username' => ['required', 'string', 'unique:users,username'],
-            'password' => ['required', 'string'],
-            'email' => ['required', 'email', 'unique:users', 'email']
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'user_code.required' => Lang::get('validation.user_code_required')
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:6']
         ];
     }
 }
