@@ -12,7 +12,6 @@ use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Lang;
 
 class UsersController extends ApiController
 {
@@ -73,7 +72,7 @@ class UsersController extends ApiController
         $this->usersRepository->createUser($data);
         $user = User::where('email', $data['email'])->first();
 
-        return response()->json(['status' => Lang::get('messages.users.store_success'), 'user_code' => $user->user_code]);
+        return response()->json(['status' => 'User created successfully', 'user_code' => $user->user_code]);
     }
 
     /**
@@ -100,14 +99,14 @@ class UsersController extends ApiController
         if (!$effective_user) {
             return response()->json([
                 'success' => false,
-                'message' => Lang::get('messages.user.not_found')
+                'message' => 'User not found'
             ]);
         }
 
         if ($effective_user->user_id != $user->id) {
             return response()->json([
                 'success' => false,
-                'message' => Lang::get('messages.user.not_allowed')
+                'message' => 'User not allowed'
             ]);
         }
 
@@ -115,7 +114,7 @@ class UsersController extends ApiController
 
         return response()->json([
             'success' => true,
-            'message' => Lang::get('messages.users.user_deleted')
+            'message' => 'User deleted'
         ]);
     }
 }

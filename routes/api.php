@@ -13,7 +13,8 @@ Route::group(['middleware' => 'api', 'namespace' => 'Api'], function () {
         'items' => 'ItemsController',
         'styles' => 'StylesController',
         'shapes' => 'ShapesController',
-        'outfits' => 'OutfitsController'
+        'outfits' => 'OutfitsController',
+        'categories' => 'CategoryController'
     ]);
 
     Route::group(['prefix' => 'users'], function () {
