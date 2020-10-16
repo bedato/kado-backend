@@ -2,43 +2,43 @@
 
 declare(strict_types=1);
 
-namespace App\Repositories\Shape;
+namespace App\Repositories\Category;
 
 use ArrayAccess;
-use App\Models\Shape;
+use App\Models\Category;
 
-class ShapesRepository implements ShapesRepositoryInterface
+class CategoriesRepository implements CategoriesRepositoryInterface
 {
-    protected $shapes;
+    protected $categories;
 
     /**
-     * ShapesRepository constructor.
+     * CategoriesRepository constructor.
      *
-     * @param Shape $shapes - instantiate Model
+     * @param Category $categories - instantiate Model
      */
-    public function __construct(Shape $shapes)
+    public function __construct(Category $categories)
     {
-        $this->shapes = $shapes;
+        $this->categories = $categories;
     }
 
     /**
-     * Retrieve all shapes.
+     * Retrieve all categories.
      *
-     * @return ArrayAccess<Shape>
+     * @return ArrayAccess<Category>
      */
     public function getAll(): ArrayAccess
     {
-        return $this->shapes->all();
+        return $this->categories->all();
     }
 
     /**
-     * Retrieve shapes that correspond to criteria.
+     * Retrieve categories that correspond to criteria.
      *
-     * @return ArrayAccess<Shape>
+     * @return ArrayAccess<Category>
      */
-    public function searchShapes(array $searchCriteria): ArrayAccess
+    public function searchCategories(array $searchCriteria): ArrayAccess
     {
-        $search = $this->shapes->query();
+        $search = $this->categories->query();
 
         $sortBy = null;
         $sortRule = null;
@@ -71,9 +71,9 @@ class ShapesRepository implements ShapesRepositoryInterface
             unset($searchCriteria['random']);
         }
 
-        if (array_key_exists('shapes', $searchCriteria)) {
-            $search = $search->where('shapes', $searchCriteria['shapes']);
-            unset($searchCriteria['shapes']);
+        if (array_key_exists('category', $searchCriteria)) {
+            $search = $search->where('category', $searchCriteria['category']);
+            unset($searchCriteria['category']);
         }
 
         if ($offset) {
@@ -91,61 +91,61 @@ class ShapesRepository implements ShapesRepositoryInterface
     }
 
     /**
-     * Retrieve Shape by Id.
+     * Retrieve Category by Id.
      *
-     * @return Shape
+     * @return Category
      */
-    public function getById(int $id): Shape
+    public function getById(int $id): Category
     {
-        return $this->shapes->findOrFail($id);
+        return $this->categories->findOrFail($id);
     }
 
     /**
-     * Retrieve total count of shapes.
+     * Retrieve total count of categories.
      *
      * @return int
      */
     public function getTotal(): int
     {
-        return $this->shapes->count();
+        return $this->categories->count();
     }
 
     /**
-     * Update shape with provided parameters.
+     * Update category with provided parameters.
      *
-     * @param int   shapeId     - id of the record.
+     * @param int   categoryId     - id of the record.
      * @param array $parameters - data to update the record with.
      *
      * @return void
      */
-    public function updateShape(int $shapeId, array $parameters): void
+    public function updateCategory(int $categoryId, array $parameters): void
     {
-        $shapes = $this->getById($shapeId);
+        $categories = $this->getById($categoryId);
 
-        $shapes->update($parameters);
+        $categories->update($parameters);
     }
 
     /**
-     * Create shape with provided parameters.
+     * Create category with provided parameters.
      *
      * @param array $parameters - data to create record.
      *
      * @return void
      */
-    public function createShape(array $parameters): void
+    public function createCategory(array $parameters): void
     {
-        $this->shapes->create($parameters);
+        $this->categories->create($parameters);
     }
 
     /**
-     * Delete shape with provided parameters.
+     * Delete category with provided parameters.
      *
-     * @param int $shapeId - id of record to delete.
+     * @param int $categoryId - id of record to delete.
      *
      * @return void
      */
-    public function deleteShape(int $shapeId): void
+    public function deleteCategory(int $categoryId): void
     {
-        $this->shapes->destroy($shapeId);
+        $this->categories->destroy($categoryId);
     }
 }

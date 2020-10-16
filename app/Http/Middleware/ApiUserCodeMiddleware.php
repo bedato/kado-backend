@@ -6,7 +6,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use DB;
-use Lang;
 
 class ApiUserCodeMiddleware
 {
@@ -25,7 +24,7 @@ class ApiUserCodeMiddleware
             if (empty($token)) {
                 return response()->json([
                     'success' => false,
-                    'message' => Lang::get('messages.api_headers.invalid_user_code')
+                    'message' => 'Invalid User Code'
                 ], 403);
             } else {
                 return $next($request);
@@ -34,7 +33,7 @@ class ApiUserCodeMiddleware
 
         return response()->json([
             'success' => false,
-            'message' => Lang::get('messages.api_headers.user_code_missing')
+            'message' => 'User Code Missing'
         ], 401);
     }
 }

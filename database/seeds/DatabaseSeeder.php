@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
             ColorsTableSeeder::class,
             ItemsTableSeeder::class,
             ShapesTableSeeder::class,
-            OutfitsTableSeeder::class
+            OutfitsTableSeeder::class,
+            CategoriesTableSeeder::class
         ]);
     }
 }

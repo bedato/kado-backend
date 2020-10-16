@@ -1,12 +1,17 @@
 <?php
 
+
 declare(strict_types=1);
 
 namespace App\Http\Requests\Api;
 
 use App\Infrastructure\Requests\JsonRequest;
 
-class CreateUserRequest extends JsonRequest
+/**
+ * Validate the passed parameters to follow the validation rules on the /categories resource of the GET method.
+ * @package Categories
+ */
+class SearchCategoriesRequest extends JsonRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,17 +30,10 @@ class CreateUserRequest extends JsonRequest
      */
     public function rules()
     {
-        return [
-            'username' => ['required', 'string', 'unique:users,username'],
-            'password' => ['required', 'string'],
-            'email' => ['required', 'email', 'unique:users', 'email']
-        ];
-    }
+        $parentRules = parent::rules();
 
-    public function messages()
-    {
-        return [
-            'user_code.required' => 'User Code Required'
-        ];
+        return $parentRules + [
+                'category' => ['nullable', 'string'],
+            ];
     }
 }

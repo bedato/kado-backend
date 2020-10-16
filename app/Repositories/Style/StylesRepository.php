@@ -71,13 +71,9 @@ class StylesRepository implements StylesRepositoryInterface
             unset($searchCriteria['random']);
         }
 
-        if (array_key_exists('country_code', $searchCriteria)) {
-            $search = $search->where('country_code', $searchCriteria['country_code']);
-            unset($searchCriteria['country_code']);
-        }
-        if (array_key_exists('global_ranking', $searchCriteria)) {
-            $search = $search->where('global_ranking', $searchCriteria['global_ranking']);
-            unset($searchCriteria['global_ranking']);
+        if (array_key_exists('styles', $searchCriteria)) {
+            $search = $search->where('styles', $searchCriteria['styles']);
+            unset($searchCriteria['styles']);
         }
 
         if ($offset) {
