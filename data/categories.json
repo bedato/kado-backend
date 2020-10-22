@@ -1,0 +1,66 @@
+[
+    {
+        "category": "Jacket",
+        "category_id": 3
+    },
+    {
+        "category": "Jeans",
+        "category_id": 2
+    },
+    {
+        "category": "Shirt",
+        "category_id": 1
+    },
+    {
+        "category": "Parka",
+        "category_id": 3
+    },
+    {
+        "category": "Skirt",
+        "category_id": 2
+    },
+    {
+        "category": "Dress",
+        "category_id": 1
+    },
+    {
+        "category": "Pullover",
+        "category_id": 3
+    },
+    {
+        "category": "Hoodie",
+        "category_id": 3
+    },
+    {
+        "category": "Training",
+        "category_id": 2
+    },
+    {
+        "category": "Tank-Top",
+        "category_id": 1
+    },
+    {
+        "category": "Coat",
+        "category_id": 4
+    },
+    {
+        "category": "Bomber",
+        "category_id": 3
+    },
+    {
+        "category": "Leggings",
+        "category_id": 2
+    },
+    {
+        "category": "Cardigan",
+        "category_id": 3
+    },
+    {
+        "category": "Shorts",
+        "category_id": 2
+    },
+    {
+        "category": "Winter-Jacket",
+        "category_id": 4
+    }
+]

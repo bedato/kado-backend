@@ -33,7 +33,6 @@ class SearchOutfitsRequest extends JsonRequest
 
         return $parentRules + [
             'user_id' => ['required', 'integer'],
-            'season' => ['required', 'string'],
         ];
     }
 }

@@ -14,7 +14,7 @@ class CreateOutfitsTable extends Migration
     public function up()
     {
         Schema::create('outfits', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->unsignedInteger('user_id')->unsigned()->index();
             $table->integer('winterjacket_id');
             $table->integer('jacket_id')->nullable();

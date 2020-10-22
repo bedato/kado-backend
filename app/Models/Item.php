@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Model;
+use Outfit;
 
 class Item extends Model
 {
@@ -13,6 +14,7 @@ class Item extends Model
     protected $fillable = [
         'user_id',
         'category',
+        'category_id',
         'season',
         'color',
         'style',
@@ -51,5 +53,20 @@ class Item extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    /**
+     * Gets outfits.
+     */
+    public function outfits(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            Outfit::class,
+            OutfitItems::class,
+            'item_id',
+            'id',
+            'id',
+            'id'
+        );
     }
 }

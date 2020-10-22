@@ -1,17 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Outfit;
+use Item;
 
-class Category extends Model
+class OutfitItems extends Model
 {
-    protected $table = 'categories';
+    protected $table = 'outfit_items';
 
     protected $fillable = [
-        'category',
-        'category_id',
+        'outfit_id',
+        'item_id',
         'created_at',
         'updated_at'
     ];
@@ -38,13 +41,21 @@ class Category extends Model
         return date('Y-m-d H:i:s', strtotime($value));
     }
 
-
-    public static function boot()
+    /**
+     * Model belongs to Outfit's model.
+     *
+     */
+    public function Outfit()
     {
-        parent::boot();
+        return $this->belongsTo(Outfit::class, 'outfit_id', 'id');
+    }
 
-        self::deleting(function ($category) {
-            $category->delete();
-        });
+    /**
+     * Model belongs to item's model.
+     *
+     */
+    public function Item()
+    {
+        return $this->belongsTo(Item::class, 'item_id', 'id');
     }
 }

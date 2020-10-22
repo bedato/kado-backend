@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Repositories\Item;
 
+use App\Models\User;
 use ArrayAccess;
 use App\Models\Item;
 
@@ -79,6 +80,11 @@ class ItemsRepository implements ItemsRepositoryInterface
         if (array_key_exists('category', $searchCriteria)) {
             $search = $search->where('category', $searchCriteria['category']);
             unset($searchCriteria['category']);
+        }
+
+        if (array_key_exists('category_id', $searchCriteria)) {
+            $search = $search->where('category_id', $searchCriteria['category_id']);
+            unset($searchCriteria['category_id']);
         }
 
         if (array_key_exists('season', $searchCriteria)) {

@@ -98,7 +98,7 @@ class OutfitsRepository implements OutfitsRepositoryInterface
             $result = $result->orderBy($sortBy, $sortRule);
         }
 
-        return $result->paginate($perPage);
+        return $result->with('items')->paginate($perPage);
     }
 
     /**
@@ -108,7 +108,7 @@ class OutfitsRepository implements OutfitsRepositoryInterface
      */
     public function getById(int $id): Outfit
     {
-        return $this->outfits->findOrFail($id);
+        return $this->outfits->with('items')->findOrFail($id);
     }
 
     /**

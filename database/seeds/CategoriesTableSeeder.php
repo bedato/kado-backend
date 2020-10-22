@@ -14,27 +14,21 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $categories = [
-            'Jacket',
-            'Jeans',
-            'T-Shirt',
-            'Parka',
-            'Skirt',
-            'Dress',
-            'Pullover',
-            'Hoodie',
-            'Training',
-            'Tank Top',
-            'Other'
-        ];
+        $categories = [];
 
-        foreach ($categories as $category) {
-            DB::table('categories')->insert([
-                'category' => $category,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
-            ]);
+        $data = file_get_contents(base_path('data/categories.json'));
+        $data = json_decode($data);
+
+        foreach ($data as $item) {
+            $categories[] = [
+              'category' => $item->category,
+              'category_id' => $item->category_id,
+              'created_at' => date('Y-m-d H:i:s'),
+              'updated_at' => date('Y-m-d H:i:s')
+            ];
         }
+
+        DB::table('categories')->insert($categories);
 
         $this->command->info('Categories table seeded!');
     }

@@ -45,42 +45,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b6ee1fa-263a-4b7f-8fa1-06f605f37978" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kado-backend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Api/SearchCategoriesRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/CategoriesResourceCollection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Category/CategoriesRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Category/CategoriesRepositoryInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_16_221022_create_categories_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/OutfitItems.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/categories.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_18_132324_create_outfit_items_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ItemsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ItemsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Color/ColorsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Color/ColorsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Shape/ShapesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Shape/ShapesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Style/StylesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Style/StylesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/CreateItemRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/CreateItemRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/SearchItemsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/SearchItemsRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/SearchOutfitsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/SearchOutfitsRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/SearchPostsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/SearchPostsRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/OutfitResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/OutfitResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Outfit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Outfit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Category/CategoriesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Category/CategoriesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Item/ItemsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Item/ItemsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Outfit/OutfitsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Outfit/OutfitsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_22_094947_create_items_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_22_094947_create_items_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_28_230916_create_outfits_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_28_230916_create_outfits_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_29_124933_create_posts_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_16_221022_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_16_221022_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ItemsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ItemsTableSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -226,6 +234,10 @@
       <option name="presentableId" value="Default" />
       <updated>1602881460522</updated>
       <workItem from="1602881461646" duration="3052000" />
+      <workItem from="1602979980473" duration="3391000" />
+      <workItem from="1603015521082" duration="3071000" />
+      <workItem from="1603022521321" duration="7108000" />
+      <workItem from="1603397272669" duration="4030000" />
     </task>
     <servers />
   </component>
@@ -242,15 +254,20 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="205" y="-767" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602886327022">
+    <state x="418" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603026468542">
       <screen x="-242" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="205" y="-767" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602886327022" />
+    <state x="418" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1603026468542" />
+    <state x="205" y="-767" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603016467747">
+      <screen x="-242" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="205" y="-767" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1603016467747" />
     <state width="1377" height="285" key="GridCell.Tab.0.bottom" timestamp="1602881585362">
       <screen x="-242" y="-1057" width="1920" height="1057" />
     </state>
@@ -267,6 +284,10 @@
       <screen x="-242" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1377" height="285" key="GridCell.Tab.0.right/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602881585361" />
+    <state x="306" y="-779" key="IDE.errors.dialog" timestamp="1603022685887">
+      <screen x="-242" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="306" y="-779" key="IDE.errors.dialog/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1603022685887" />
     <state x="291" y="-602" key="NewPhpFileDialog" timestamp="1602885641858">
       <screen x="-242" y="-1057" width="1920" height="1057" />
     </state>
@@ -279,9 +300,19 @@
       <screen x="-242" y="-1057" width="1920" height="1057" />
     </state>
     <state x="278" y="-612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602885245932" />
-    <state x="130" y="-824" width="672" height="678" key="search.everywhere.popup" timestamp="1602886823040">
+    <state width="600" height="440" key="javadoc.popup" timestamp="1602983538708">
       <screen x="-242" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="130" y="-824" width="672" height="678" key="search.everywhere.popup/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602886823040" />
+    <state width="600" height="440" key="javadoc.popup/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602983538708" />
+    <state x="592" y="-666" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1603026164440">
+      <screen x="-242" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="592" y="-666" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1603026164440" />
+    <state x="279" y="216" width="672" height="563" key="search.everywhere.popup" timestamp="1603401791662">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="1812" y="76" width="672" height="678" key="search.everywhere.popup/0.23.1440.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1603397351775" />
+    <state x="279" y="216" width="672" height="563" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1603401791662" />
+    <state x="130" y="-824" width="672" height="678" key="search.everywhere.popup/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1603035081876" />
   </component>
 </project>

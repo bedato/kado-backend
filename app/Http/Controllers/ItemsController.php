@@ -42,13 +42,26 @@ class ItemsController extends ApiController
     /**
      * Get items list
      *
+     * @param SearchItemsRequest $request  - incoming request
+     *
      * @return \App\Http\Resources\ItemsResourceCollection
      */
     public function index(SearchItemsRequest $request): ItemsResourceCollection
     {
-        $items = $this->repository->searchItems(
-            $request->validated()
+        $data = $request->validated();
+
+        $merchant = $this->merchantsRepository->getByToken(
+            $request->header('X-Access-Token')
         );
+
+        $user = $this->usersRepository->getByUserCode(
+            $merchant->id,
+            $request->header('X-User-Code')
+        );
+
+        $data['user_id'] = $user->id;
+
+        $items = $this->repository->searchItems($data);
 
         return new ItemsResourceCollection($items);
     }

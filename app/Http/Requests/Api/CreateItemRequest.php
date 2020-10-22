@@ -28,6 +28,7 @@ class CreateItemRequest extends JsonRequest
         return [
             'user_id' => ['integer'],
             'category' => ['nullable', 'string'],
+            'category_id' => ['nullable', 'integer'],
             'season' => ['nullable', 'string'],
             'color' => ['nullable', 'string'],
             'style' => ['nullable', 'string'],
