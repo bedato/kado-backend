@@ -45,17 +45,17 @@ class OutfitItems extends Model
      * Model belongs to Outfit's model.
      *
      */
-    public function Outfit()
+    public function outfit()
     {
-        return $this->belongsTo(Outfit::class, 'outfit_id', 'id');
+        return $this->belongsTo(Outfit::class, 'outfit_id');
     }
 
     /**
      * Model belongs to item's model.
      *
      */
-    public function Item()
+    public function item()
     {
-        return $this->belongsTo(Item::class, 'item_id', 'id');
+        return $this->belongsTo(Item::class, 'item_id');
     }
 }

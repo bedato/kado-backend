@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use Item;
+
 
 class Outfit extends Model
 {
@@ -63,10 +63,11 @@ class Outfit extends Model
      * Gets Items.
      */
     public function items(): hasManyThrough
+
     {
         return $this->hasManyThrough(
-            Item::class,
-            OutfitItems::class,
+            "App\Models\Item",
+            "App\Models\OutfitItems",
             'outfit_id',
             'id',
             'id',

@@ -45,33 +45,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b6ee1fa-263a-4b7f-8fa1-06f605f37978" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/OutfitItems.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/categories.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_18_132324_create_outfit_items_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ItemsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ItemsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/CreateItemRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/CreateItemRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OutfitsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OutfitsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/CreateOutfitRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/CreateOutfitRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/SearchItemsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/SearchItemsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/SearchOutfitsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/SearchOutfitsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/SearchPostsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/SearchPostsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CategoryResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/OutfitResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/OutfitResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ItemResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ItemResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Item.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Outfit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Outfit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Category/CategoriesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Category/CategoriesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/OutfitItems.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OutfitItems.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/Item/ItemsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Item/ItemsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Item/ItemsRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Item/ItemsRepositoryInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/Outfit/OutfitsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Outfit/OutfitsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_22_094947_create_items_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_22_094947_create_items_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_28_230916_create_outfits_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_28_230916_create_outfits_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_29_124933_create_posts_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_16_221022_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_16_221022_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ItemsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ItemsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/OutfitsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/OutfitsTableSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +224,10 @@
       <workItem from="1602979980473" duration="3391000" />
       <workItem from="1603015521082" duration="3071000" />
       <workItem from="1603022521321" duration="7108000" />
-      <workItem from="1603397272669" duration="4030000" />
+      <workItem from="1603397272669" duration="4035000" />
+      <workItem from="1603552118630" duration="754000" />
+      <workItem from="1603553816039" duration="9684000" />
+      <workItem from="1603630845009" duration="7615000" />
     </task>
     <servers />
   </component>
@@ -260,6 +250,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2000" y="19" key="#Plugins" timestamp="1603553785576">
+      <screen x="1440" y="-157" width="1920" height="1057" />
+    </state>
+    <state x="2000" y="19" key="#Plugins/0.23.1440.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1603553785576" />
     <state x="418" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603026468542">
       <screen x="-242" y="-1057" width="1920" height="1057" />
     </state>
@@ -308,11 +302,11 @@
       <screen x="-242" y="-1057" width="1920" height="1057" />
     </state>
     <state x="592" y="-666" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1603026164440" />
-    <state x="279" y="216" width="672" height="563" key="search.everywhere.popup" timestamp="1603401791662">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="1812" y="76" width="672" height="678" key="search.everywhere.popup" timestamp="1603663679624">
+      <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state x="1812" y="76" width="672" height="678" key="search.everywhere.popup/0.23.1440.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1603397351775" />
-    <state x="279" y="216" width="672" height="563" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1603401791662" />
+    <state x="1812" y="76" width="672" height="678" key="search.everywhere.popup/0.23.1440.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1603663679624" />
+    <state x="279" y="216" width="672" height="563" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1603652548005" />
     <state x="130" y="-824" width="672" height="678" key="search.everywhere.popup/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1603035081876" />
   </component>
 </project>

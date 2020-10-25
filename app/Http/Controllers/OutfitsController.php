@@ -71,10 +71,11 @@ class OutfitsController extends ApiController
 
         $data = $request->validated();
         $data['user_id'] = $user->id;
+        $data['items_id'] = $user->items;
 
         $this->repository->createOutfit($data);
 
-        return response()->json('messages.outfits.store_success');
+        return response()->json('Outfit created successfully');
     }
 
     /**

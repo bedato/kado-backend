@@ -5,21 +5,25 @@ declare(strict_types=1);
 namespace App\Repositories\Item;
 
 use App\Models\User;
+use App\Models\Category;
 use ArrayAccess;
 use App\Models\Item;
 
 class ItemsRepository implements ItemsRepositoryInterface
 {
     protected $items;
+    protected $categories;
 
     /**
      * ItemsRepository constructor.
      *
      * @param Item $items - instantiate Model
+     * @param Category $categories - instantiate Model
      */
-    public function __construct(Item $items)
+    public function __construct(Item $items, Category $categories)
     {
         $this->items = $items;
+        $this->categories = $categories;
     }
 
     /**
@@ -30,6 +34,22 @@ class ItemsRepository implements ItemsRepositoryInterface
     public function getAll(): ArrayAccess
     {
         return $this->items->all();
+    }
+
+    /**
+     * Retrieve all items.
+     *
+     */
+    public function getFiltered(int $userId)
+    {
+        $categories = $this->categories->select('category_id')->distinct()->get()->pluck('category_id');
+        $suggestedItems = collect($categories)->map(function($category) use($userId) {
+            return $this->items->where('user_id', $userId)
+            ->where('category_id', $category)
+                ->inRandomOrder()
+                ->first();
+        });
+        return $suggestedItems;
     }
 
     /**
@@ -71,6 +91,7 @@ class ItemsRepository implements ItemsRepositoryInterface
             }
             unset($searchCriteria['random']);
         }
+
 
         if (array_key_exists('user_id', $searchCriteria)) {
             $search = $search->where('user_id', $searchCriteria['user_id']);
@@ -174,6 +195,7 @@ class ItemsRepository implements ItemsRepositoryInterface
     {
         $this->items->create($parameters);
     }
+
 
     /**
      * Delete item with provided parameters.

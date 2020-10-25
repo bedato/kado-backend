@@ -98,7 +98,7 @@ class OutfitsRepository implements OutfitsRepositoryInterface
             $result = $result->orderBy($sortBy, $sortRule);
         }
 
-        return $result->with('items')->paginate($perPage);
+        return $result->paginate($perPage);
     }
 
     /**

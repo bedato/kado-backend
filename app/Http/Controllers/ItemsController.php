@@ -46,7 +46,7 @@ class ItemsController extends ApiController
      *
      * @return \App\Http\Resources\ItemsResourceCollection
      */
-    public function index(SearchItemsRequest $request): ItemsResourceCollection
+    public function index(SearchItemsRequest $request)//: ItemsResourceCollection
     {
         $data = $request->validated();
 
@@ -61,7 +61,8 @@ class ItemsController extends ApiController
 
         $data['user_id'] = $user->id;
 
-        $items = $this->repository->searchItems($data);
+        $items = $this->repository->getFiltered($user->id);
+        return ($items);
 
         return new ItemsResourceCollection($items);
     }

@@ -33,7 +33,7 @@ class SearchItemsRequest extends JsonRequest
 
         return $parentRules + [
             'category' => ['nullable', 'string'],
-            'category_id' => ['required', 'integer'],
+            'category_id' => ['nullable', 'integer'],
             'season' => ['nullable', 'string'],
         ];
     }

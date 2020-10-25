@@ -17,13 +17,7 @@ class OutfitsTableSeeder extends Seeder
     {
         DB::table('outfits')->insert([
             'user_id' => 1,
-            'winterjacket_id' => 3,
-            'jacket_id' => 3,
-            'top_id' => 4,
-            'bottom_id' => 5,
-            'image_url' => null,
-            'season' => 'winter',
-            'style' => 'visual-kei',
+            'item_id' => 1,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);

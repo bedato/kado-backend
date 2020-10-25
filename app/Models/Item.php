@@ -62,11 +62,11 @@ class Item extends Model
     {
         return $this->hasManyThrough(
             Outfit::class,
-            OutfitItems::class,
-            'item_id',
-            'id',
-            'id',
-            'id'
+            \OutfitItems::class
+                //'item_id'
+              //'id',
+             //'id',
+            //'id'
         );
     }
 }
