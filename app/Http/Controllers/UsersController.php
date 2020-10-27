@@ -10,6 +10,7 @@ use App\Repositories\Merchant\MerchantsRepositoryInterface;
 use App\Repositories\User\UsersRepositoryInterface;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use Hash;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -70,9 +71,16 @@ class UsersController extends ApiController
         $data['merchant_id'] = $merchant->id;
 
         $this->usersRepository->createUser($data);
-        $user = User::where('email', $data['email'])->first();
+        $credentials = $request->only('email', 'password', 'username');
+        $user = User::where('email', $credentials['email'])->first();
 
-        return response()->json(['status' => 'User created successfully', 'user_code' => $user->user_code]);
+        if (!empty($user)) {
+            if (!$credentials['username'] == $user->username) {
+                return response()->json(['message' => 'Username already taken. Please try again!']);
+            }
+            return response()->json(['status' => 'User created successfully', 'user_code' => $user->user_code]);
+        }
+        return response()->json(['message' => 'E-Mail is wrong. Please try again!']);
     }
 
     /**

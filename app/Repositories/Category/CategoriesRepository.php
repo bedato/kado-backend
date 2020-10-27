@@ -76,6 +76,11 @@ class CategoriesRepository implements CategoriesRepositoryInterface
             unset($searchCriteria['category']);
         }
 
+        if (array_key_exists('category_id', $searchCriteria)) {
+            $search = $search->where('category_id', $searchCriteria['category_id']);
+            unset($searchCriteria['category_id']);
+        }
+
         if ($offset) {
             $search = $search->where('id', '>=', $offset);
         }

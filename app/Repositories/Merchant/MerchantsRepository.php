@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Repositories\Merchant;
 
-use ArrayAccess;
 use App\Models\Merchant;
-use Illuminate\Support\Str;
+use ArrayAccess;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Str;
 
 /**
  * MerchantsRepository
@@ -16,9 +16,6 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
  *
  * @category Base_API
  * @package  Merchants
- * @author   David Ciulla <dave@5degrees.ch>
- * @license  Proprietary https://5degrees.ch
- * @link     https://5degrees.ch
  */
 class MerchantsRepository implements MerchantsRepositoryInterface
 {
@@ -65,7 +62,6 @@ class MerchantsRepository implements MerchantsRepositoryInterface
             $page = $searchCriteria['page'];
             unset($searchCriteria['page']);
         }
-
 
         if (
             array_key_exists('sort_by', $searchCriteria)

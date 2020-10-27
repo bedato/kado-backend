@@ -1,15 +1,15 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Repositories\User;
 
-use ArrayAccess;
-use App\Models\User;
 use App\Models\Item;
 use App\Models\Outfit;
-use Illuminate\Support\Str;
+use App\Models\User;
+use ArrayAccess;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Str;
 
 /**
  * UsersRepository
@@ -18,9 +18,6 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
  *
  * @category Base_API
  * @package  Users
- * @author   David Ciulla <dave@5degrees.ch>
- * @license  Proprietary https://5degrees.ch
- * @link     https://5degrees.ch
  */
 class UsersRepository implements UsersRepositoryInterface
 {
@@ -73,7 +70,6 @@ class UsersRepository implements UsersRepositoryInterface
             $page = $searchCriteria['page'];
             unset($searchCriteria['page']);
         }
-
 
         if (
             array_key_exists('sort_by', $searchCriteria)
@@ -138,7 +134,6 @@ class UsersRepository implements UsersRepositoryInterface
     {
         return User::with('items')->with('outfits')->findOrFail($id);
     }
-
 
     /**
      * Retrieve total count of users.

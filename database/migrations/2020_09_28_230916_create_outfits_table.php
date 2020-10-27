@@ -14,17 +14,13 @@ class CreateOutfitsTable extends Migration
     public function up()
     {
         Schema::create('outfits', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('user_id')->unsigned()->index();
-            $table->integer('winterjacket_id');
-            $table->integer('jacket_id')->nullable();
-            $table->integer('top_id')->nullable();
-            $table->integer('bottom_id')->nullable();
-            $table->string('image_url')->nullable();
-            $table->string('season')->nullable();
+            $table->bigIncrements('id');
+            $table->unsignedInteger('user_id')->index();
+            $table->unsignedBigInteger('item_id');
             $table->string('style')->nullable();
             $table->timestamps();
 
+            $table->foreign('item_id')->references('id')->on('items');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

@@ -1,17 +1,17 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Item;
+use App\Http\Requests\Api\CreateItemRequest;
+use App\Http\Requests\Api\SearchItemsRequest;
 use App\Http\Resources\ItemResource;
 use App\Http\Resources\ItemsResourceCollection;
-use App\Http\Requests\Api\SearchItemsRequest;
-use App\Http\Requests\Api\CreateItemRequest;
+use App\Models\Item;
 use App\Repositories\Item\ItemsRepositoryInterface;
-use App\Repositories\User\UsersRepositoryInterface;
 use App\Repositories\Merchant\MerchantsRepositoryInterface;
+use App\Repositories\User\UsersRepositoryInterface;
 use Illuminate\Http\JsonResponse;
 
 class ItemsController extends ApiController
@@ -40,17 +40,50 @@ class ItemsController extends ApiController
     }
 
     /**
-     * Get items list
+     * Get random items list
+     *
+     * @param SearchItemsRequest $request  - incoming request
      *
      * @return \App\Http\Resources\ItemsResourceCollection
      */
-    public function index(SearchItemsRequest $request): ItemsResourceCollection
+    public function index(SearchItemsRequest $request) //: ItemsResourceCollection
+
+    {
+        $data = $request->validated();
+
+        $merchant = $this->merchantsRepository->getByToken(
+            $request->header('X-Access-Token')
+        );
+
+        $user = $this->usersRepository->getByUserCode(
+            $merchant->id,
+            $request->header('X-User-Code')
+        );
+
+        $data['user_id'] = $user->id;
+
+        $items = $this->repository->getFiltered($user->id);
+        return ($items);
+
+        return new ItemsResourceCollection($items);
+    }
+
+    /**
+     * Get items list
+     *
+     * @param SearchItemsRequest $request  - incoming request
+     *
+     * @return \App\Http\Resources\ItemsResourceCollection
+     */
+
+    public function allitems(SearchItemsRequest $request): ItemsResourceCollection
     {
         $items = $this->repository->searchItems(
             $request->validated()
         );
 
         return new ItemsResourceCollection($items);
+
     }
 
     /**

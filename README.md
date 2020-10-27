@@ -1,61 +1,49 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Praktische Projektarbeit : Web Application (WBD5204.1) Kado App
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Summary
 
-## About Laravel
+Kado is an app in which users can register items they have and can get a randomized outfit from those items.
+The goal is to solve the "What should i wear today?" problem everybody faces daily.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Backend-Setup
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Requirements for the local setup
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   Docker
+-   Terminal to use the .sh scripts
+-   Local Laravel Installation (https://laravel.com/docs/8.x/installation)
 
-## Learning Laravel
+If you have those installed follow this guide:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Start Docker
+2. cd into the Project from the Terminal
+3. From the Project root (backend) type in scripts/install.sh and let the script install the docker dependencies
+4. Migrate and seed the Database with php artisan migrate --seed
+5. To checkout the DB use the credentials in the .env fiel
+6. The API is setup! The base URL for this api is local.kado.com/api/
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**IMPORTANT**
+The API-Key is auto generated and can be found in the table "merchants" under api_token.
+This API has tokens since it was made with API development principles.
 
-## Laravel Sponsors
+## About the Project structure
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+This API was made with the Laravel PHP Framework. The API makes use of the MvC-Principle with strict-typed OOP-PHP.
 
-### Premium Partners
+API-Structure - Workflow on this Project
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+Routes
 
-## Contributing
+-   When creating a new endpoint, i started by creating the route. When possible, i worked with apiResources which handles the needed requests (GET, POST, DELETE...). Else a binding to a Controller and the corresponding function is needed. Doing that guides the request into the Meat and Potatos of the API. Like What kind of request is it? What should happen during that request? what kind of validation is needed? which databases will be used.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Model
 
-## Code of Conduct
+-   The Model has all the Data logic in it. Basically it defines how the data is inserted / displayed in the Database, if it has Relations and what kind of Relations.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Controller
 
-## Security Vulnerabilities
+-   The Controller contains the logic and functions. The methods defined in the controller handle the requests like how should it be saved in the DB? Through which requests does it go? Which validations should be applied? Etc... When the request goes through the controller it will be ready to be sent to the view or in this case as JSON Response.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Request
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-   In the Request part (ex. SearchItemsRequest, CreateItemsRequest) is in which the validation is done. Laravel has a easy way to define the validation right in the arrays of the request, for example the password validation on a LoginRequest "'password' => ['required', 'min:6', 'regex:/^(?=._[a-z])(?=._[A-Z])(?=.\*\d).+\$/'],". Here it will check if it is a required field, the max length and the regex it has to go through.

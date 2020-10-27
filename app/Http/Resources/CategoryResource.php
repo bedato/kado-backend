@@ -25,6 +25,7 @@ class CategoryResource extends JsonResource
         return [
             'id' => (int) $category->id,
             'category' => $category->category,
+            'category_id' =>(int) $category->category_id,
             'created_at' => $this->formatDate($category->created_at),
             'updated_at' => $this->formatDate($category->updated_at)
         ];

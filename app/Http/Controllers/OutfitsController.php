@@ -1,17 +1,17 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Outfit;
+use App\Http\Requests\Api\CreateOutfitRequest;
+use App\Http\Requests\Api\SearchOutfitsRequest;
 use App\Http\Resources\OutfitResource;
 use App\Http\Resources\OutfitsResourceCollection;
-use App\Http\Requests\Api\SearchOutfitsRequest;
-use App\Http\Requests\Api\CreateOutfitRequest;
+use App\Models\Outfit;
+use App\Repositories\Merchant\MerchantsRepositoryInterface;
 use App\Repositories\Outfit\OutfitsRepositoryInterface;
 use App\Repositories\User\UsersRepositoryInterface;
-use App\Repositories\Merchant\MerchantsRepositoryInterface;
 use Illuminate\Http\JsonResponse;
 
 class OutfitsController extends ApiController
@@ -71,10 +71,11 @@ class OutfitsController extends ApiController
 
         $data = $request->validated();
         $data['user_id'] = $user->id;
+        $data['items_id'] = $user->items;
 
         $this->repository->createOutfit($data);
 
-        return response()->json('messages.outfits.store_success');
+        return response()->json('Outfit created successfully');
     }
 
     /**

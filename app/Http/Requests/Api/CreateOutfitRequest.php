@@ -27,13 +27,7 @@ class CreateOutfitRequest extends JsonRequest
     {
         return [
             'user_id' => ['integer'],
-            'winterjacket_id' => ['nullable', 'integer'],
-            'jacket_id' => ['nullable', 'integer'],
-            'top_id' => ['nullable', 'integer'],
-            'bottom_id' => ['nullable', 'integer'],
-            'image_url' => ['nullable', 'integer'],
-            'season' => ['nullable', 'integer'],
-            'style' => ['nullable', 'integer']
+            'item_id' => ['integer'],
         ];
     }
 }

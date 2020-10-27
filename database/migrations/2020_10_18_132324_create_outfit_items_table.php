@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsTable extends Migration
+class CreateOutfitItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('outfit_items', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('outfit_id')->unsigned()->index();
-            $table->unsignedInteger('user_id')->unsigned()->index();
+            $table->bigInteger('outfit_id')->unsigned()->index();
+            $table->bigInteger('item_id')->unsigned()->index();
             $table->timestamps();
 
             $table->foreign('outfit_id')->references('id')->on('outfits');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('item_id')->references('id')->on('items');
         });
     }
 
@@ -31,6 +31,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts_tables');
+        Schema::dropIfExists('outfit_items');
     }
 }

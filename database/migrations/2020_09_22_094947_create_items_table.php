@@ -14,9 +14,10 @@ class CreateItemsTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedInteger('user_id')->unsigned()->index();
-            $table->string('category');
+            $table->string('category')->nullable();
+            $table->integer('category_id')->nullable();
             $table->string('season')->nullable();
             $table->string('color')->nullable();
             $table->string('style')->nullable();

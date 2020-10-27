@@ -30,6 +30,8 @@ interface ItemsRepositoryInterface
      */
     public function getById(int $id): Item;
 
+    public function getFiltered(int $userId);
+
     /**
      * Retrieve item by Id.
      *
@@ -59,6 +61,7 @@ interface ItemsRepositoryInterface
      * @return void
      */
     public function createItem(array $parameters): void;
+
 
     /**
      * Delete item with provided parameters.

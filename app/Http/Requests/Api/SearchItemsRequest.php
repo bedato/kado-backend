@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Http\Requests\Api;
 
@@ -32,7 +32,9 @@ class SearchItemsRequest extends JsonRequest
         $parentRules = parent::rules();
 
         return $parentRules + [
+            'user_id' => ['nullable', 'integer'],
             'category' => ['nullable', 'string'],
+            'category_id' => ['nullable', 'integer'],
             'season' => ['nullable', 'string'],
         ];
     }

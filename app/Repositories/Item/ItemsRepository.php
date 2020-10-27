@@ -1,24 +1,29 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Repositories\Item;
 
-use ArrayAccess;
+use App\Models\Category;
 use App\Models\Item;
+use App\Models\User;
+use ArrayAccess;
 
 class ItemsRepository implements ItemsRepositoryInterface
 {
     protected $items;
+    protected $categories;
 
     /**
      * ItemsRepository constructor.
      *
      * @param Item $items - instantiate Model
+     * @param Category $categories - instantiate Model
      */
-    public function __construct(Item $items)
+    public function __construct(Item $items, Category $categories)
     {
         $this->items = $items;
+        $this->categories = $categories;
     }
 
     /**
@@ -29,6 +34,22 @@ class ItemsRepository implements ItemsRepositoryInterface
     public function getAll(): ArrayAccess
     {
         return $this->items->all();
+    }
+
+    /**
+     * Retrieve random Items, preparation for Outfit.
+     *
+     */
+    public function getFiltered(int $userId)
+    {
+        $categories = $this->categories->select('category_id')->distinct()->get()->pluck('category_id');
+        $suggestedItems = collect($categories)->map(function ($category) use ($userId) {
+            return $this->items->where('user_id', $userId)
+                ->where('category_id', $category)
+                ->inRandomOrder()
+                ->first();
+        });
+        return $suggestedItems;
     }
 
     /**
@@ -79,6 +100,11 @@ class ItemsRepository implements ItemsRepositoryInterface
         if (array_key_exists('category', $searchCriteria)) {
             $search = $search->where('category', $searchCriteria['category']);
             unset($searchCriteria['category']);
+        }
+
+        if (array_key_exists('category_id', $searchCriteria)) {
+            $search = $search->where('category_id', $searchCriteria['category_id']);
+            unset($searchCriteria['category_id']);
         }
 
         if (array_key_exists('season', $searchCriteria)) {

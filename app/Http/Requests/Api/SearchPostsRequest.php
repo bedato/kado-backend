@@ -11,7 +11,7 @@ class SearchPostsRequest extends JsonRequest
     /**
      * Determine if the user is authorized to make this request.
      *
-     * @return bool§
+     * @return bool
      **/
     public function authorize()
     {

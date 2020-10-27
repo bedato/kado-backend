@@ -32,6 +32,7 @@ class ItemsTableSeeder extends Seeder
             DB::table('items')->insert([
                 'user_id' => 1,
                 'category' => $item,
+                'category_id' => 1,
                 'season' => null,
                 'color' => null,
                 'style' => null,

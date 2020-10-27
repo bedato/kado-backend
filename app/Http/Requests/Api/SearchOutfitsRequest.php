@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Http\Requests\Api;
 
@@ -33,7 +33,6 @@ class SearchOutfitsRequest extends JsonRequest
 
         return $parentRules + [
             'user_id' => ['required', 'integer'],
-            'season' => ['required', 'string'],
         ];
     }
 }
