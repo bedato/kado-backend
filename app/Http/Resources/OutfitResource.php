@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Http\Resources;
 
@@ -27,7 +27,7 @@ class OutfitResource extends JsonResource
             'user_id' => (int) $outfit->user_id,
             'items' => $outfit->items,
             'created_at' => $this->formatDate($outfit->created_at),
-            'updated_at' => $this->formatDate($outfit->updated_at)
+            'updated_at' => $this->formatDate($outfit->updated_at),
         ];
     }
 }

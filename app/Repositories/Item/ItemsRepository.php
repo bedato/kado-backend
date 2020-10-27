@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Repositories\Item;
 
-use App\Models\User;
 use App\Models\Category;
-use ArrayAccess;
 use App\Models\Item;
+use App\Models\User;
+use ArrayAccess;
 
 class ItemsRepository implements ItemsRepositoryInterface
 {
@@ -37,15 +37,15 @@ class ItemsRepository implements ItemsRepositoryInterface
     }
 
     /**
-     * Retrieve all items.
+     * Retrieve random Items, preparation for Outfit.
      *
      */
     public function getFiltered(int $userId)
     {
         $categories = $this->categories->select('category_id')->distinct()->get()->pluck('category_id');
-        $suggestedItems = collect($categories)->map(function($category) use($userId) {
+        $suggestedItems = collect($categories)->map(function ($category) use ($userId) {
             return $this->items->where('user_id', $userId)
-            ->where('category_id', $category)
+                ->where('category_id', $category)
                 ->inRandomOrder()
                 ->first();
         });
@@ -91,7 +91,6 @@ class ItemsRepository implements ItemsRepositoryInterface
             }
             unset($searchCriteria['random']);
         }
-
 
         if (array_key_exists('user_id', $searchCriteria)) {
             $search = $search->where('user_id', $searchCriteria['user_id']);
@@ -195,7 +194,6 @@ class ItemsRepository implements ItemsRepositoryInterface
     {
         $this->items->create($parameters);
     }
-
 
     /**
      * Delete item with provided parameters.

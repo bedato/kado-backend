@@ -1,11 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Repositories\Outfit;
 
-use ArrayAccess;
 use App\Models\Outfit;
+use ArrayAccess;
 
 interface OutfitsRepositoryInterface
 {

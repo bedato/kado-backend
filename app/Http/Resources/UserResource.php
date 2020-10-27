@@ -1,13 +1,12 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Http\Resources;
 
 use App\Infrastructure\Resources\WithApiWrapping;
 use App\Infrastructure\Resources\WithDataFormatters;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Facades\Lang;
 
 class UserResource extends JsonResource
 {
@@ -27,6 +26,7 @@ class UserResource extends JsonResource
         $deletedAt = $user->deleted_at ? $this->formatDate($user->deleted_at) : null;
 
         return [
+            'user_id' => $user->id,
             'user_code' => $user->user_code,
             'username' => $user->username,
             'password' => $user->password,
@@ -35,7 +35,7 @@ class UserResource extends JsonResource
             'outfits' => $user->outfits,
             'created_at' => $this->formatDate($user->created_at),
             'updated_at' => $this->formatDate($user->updated_at),
-            'deleted_at' => $deletedAt
+            'deleted_at' => $deletedAt,
         ];
     }
 }

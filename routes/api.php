@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +14,7 @@ Route::group(['middleware' => 'api', 'namespace' => 'Api'], function () {
         'styles' => 'StylesController',
         'shapes' => 'ShapesController',
         'outfits' => 'OutfitsController',
-        'categories' => 'CategoryController'
+        'categories' => 'CategoryController',
     ]);
 
     Route::group(['prefix' => 'users'], function () {
@@ -23,9 +23,11 @@ Route::group(['middleware' => 'api', 'namespace' => 'Api'], function () {
         Route::post('login', 'LoginController@login');
     });
 
-    Route::group(['middleware' => 'user'], function () {
-        Route::get('posts', 'PostsController@index');
-        Route::post('posts', 'PostsController@store');
-        Route::delete('posts/{id}', 'PostsController@destroy');
-    });
+    // Route::group(['middleware' => 'user'], function () {
+    //     Route::get('posts', 'PostsController@index');
+    //     Route::post('posts', 'PostsController@store');
+    //     Route::delete('posts/{id}', 'PostsController@destroy');
+    // });
+    Route::get('all-items', 'ItemsController@allitems');
+
 });

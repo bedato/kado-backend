@@ -46,19 +46,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4b6ee1fa-263a-4b7f-8fa1-06f605f37978" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ItemsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ItemsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OutfitsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OutfitsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/CreateOutfitRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/CreateOutfitRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/SearchItemsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/SearchItemsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ItemResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ItemResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Outfit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Outfit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/OutfitItems.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OutfitItems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Item/ItemsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Item/ItemsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Item/ItemsRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Item/ItemsRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Outfit/OutfitsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Outfit/OutfitsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_28_230916_create_outfits_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_28_230916_create_outfits_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/OutfitsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/OutfitsTableSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +214,7 @@
       <workItem from="1603397272669" duration="4035000" />
       <workItem from="1603552118630" duration="754000" />
       <workItem from="1603553816039" duration="9684000" />
-      <workItem from="1603630845009" duration="7615000" />
+      <workItem from="1603630845009" duration="8117000" />
     </task>
     <servers />
   </component>

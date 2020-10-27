@@ -1,11 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Repositories\Outfit;
 
-use ArrayAccess;
 use App\Models\Outfit;
+use ArrayAccess;
 
 class OutfitsRepository implements OutfitsRepositoryInterface
 {
@@ -76,17 +76,6 @@ class OutfitsRepository implements OutfitsRepositoryInterface
             unset($searchCriteria['user_id']);
         }
 
-
-        if (array_key_exists('season', $searchCriteria)) {
-            $search = $search->where('season', $searchCriteria['season']);
-            unset($searchCriteria['season']);
-        }
-
-        if (array_key_exists('style', $searchCriteria)) {
-            $search = $search->where('style', $searchCriteria['style']);
-            unset($searchCriteria['style']);
-        }
-
         if ($offset) {
             $search = $search->where('id', '>=', $offset);
         }
@@ -98,7 +87,7 @@ class OutfitsRepository implements OutfitsRepositoryInterface
             $result = $result->orderBy($sortBy, $sortRule);
         }
 
-        return $result->paginate($perPage);
+        return $result->with('items')->paginate($perPage);
     }
 
     /**
