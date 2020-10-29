@@ -47,3 +47,9 @@ Controller
 Request
 
 -   In the Request part (ex. SearchItemsRequest, CreateItemsRequest) is in which the validation is done. Laravel has a easy way to define the validation right in the arrays of the request, for example the password validation on a LoginRequest "'password' => ['required', 'min:6', 'regex:/^(?=._[a-z])(?=._[A-Z])(?=.\*\d).+\$/'],". Here it will check if it is a required field, the max length and the regex it has to go through.
+
+Repository
+
+- The Repository includes Methods where which will be used in the Controller for the incoming requests. For example, most endpoints have search Method where the Response is prepared. Like How is it filtered? with which parameters can we search objects in the response (get->?user_id=1).
+
+ 
