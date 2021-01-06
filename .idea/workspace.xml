@@ -46,7 +46,19 @@
   <component name="ChangeListManager">
     <list default="true" id="4b6ee1fa-263a-4b7f-8fa1-06f605f37978" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ColorsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ItemsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OutfitsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShapesController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StylesController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/OutfitResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/OutfitResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Outfit/OutfitsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Outfit/OutfitsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,6 +230,10 @@
       <workItem from="1603630845009" duration="8117000" />
       <workItem from="1603819451728" duration="499000" />
       <workItem from="1603819969571" duration="2214000" />
+      <workItem from="1604411489205" duration="258000" />
+      <workItem from="1605302731942" duration="213000" />
+      <workItem from="1609264355088" duration="62000" />
+      <workItem from="1609268686900" duration="3020000" />
     </task>
     <servers />
   </component>
@@ -238,68 +254,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2000" y="19" key="#Plugins" timestamp="1603553785576">
-      <screen x="1440" y="-157" width="1920" height="1057" />
-    </state>
-    <state x="2000" y="19" key="#Plugins/0.23.1440.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1603553785576" />
-    <state x="418" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603026468542">
-      <screen x="-242" y="-1057" width="1920" height="1057" />
-    </state>
-    <state x="418" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1603026468542" />
-    <state x="205" y="-767" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603016467747">
-      <screen x="-242" y="-1057" width="1920" height="1057" />
-    </state>
-    <state x="205" y="-767" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1603016467747" />
-    <state width="1377" height="285" key="GridCell.Tab.0.bottom" timestamp="1602881585362">
-      <screen x="-242" y="-1057" width="1920" height="1057" />
-    </state>
-    <state width="1377" height="285" key="GridCell.Tab.0.bottom/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602881585362" />
-    <state width="1377" height="285" key="GridCell.Tab.0.center" timestamp="1602881585361">
-      <screen x="-242" y="-1057" width="1920" height="1057" />
-    </state>
-    <state width="1377" height="285" key="GridCell.Tab.0.center/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602881585361" />
-    <state width="1377" height="285" key="GridCell.Tab.0.left" timestamp="1602881585360">
-      <screen x="-242" y="-1057" width="1920" height="1057" />
-    </state>
-    <state width="1377" height="285" key="GridCell.Tab.0.left/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602881585360" />
-    <state width="1377" height="285" key="GridCell.Tab.0.right" timestamp="1602881585361">
-      <screen x="-242" y="-1057" width="1920" height="1057" />
-    </state>
-    <state width="1377" height="285" key="GridCell.Tab.0.right/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602881585361" />
-    <state x="306" y="-779" key="IDE.errors.dialog" timestamp="1603022685887">
-      <screen x="-242" y="-1057" width="1920" height="1057" />
-    </state>
-    <state x="306" y="-779" key="IDE.errors.dialog/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1603022685887" />
-    <state x="291" y="-602" key="NewPhpFileDialog" timestamp="1602885641858">
-      <screen x="-242" y="-1057" width="1920" height="1057" />
-    </state>
-    <state x="291" y="-602" key="NewPhpFileDialog/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602885641858" />
-    <state x="251" y="196" key="SettingsEditor" timestamp="1603819961711">
-      <screen x="54" y="23" width="1738" height="1097" />
-    </state>
-    <state x="251" y="196" key="SettingsEditor/-66.-1057.1920.1057/54.23.1738.1097@54.23.1738.1097" timestamp="1603819961711" />
-    <state x="-24" y="-890" key="SettingsEditor/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602885080165" />
-    <state x="278" y="-612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602885245932">
-      <screen x="-242" y="-1057" width="1920" height="1057" />
-    </state>
-    <state x="278" y="-612" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602885245932" />
-    <state width="600" height="440" key="javadoc.popup" timestamp="1602983538708">
-      <screen x="-242" y="-1057" width="1920" height="1057" />
-    </state>
-    <state width="600" height="440" key="javadoc.popup/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1602983538708" />
-    <state x="592" y="-666" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1603026164440">
-      <screen x="-242" y="-1057" width="1920" height="1057" />
-    </state>
-    <state x="592" y="-666" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1603026164440" />
-    <state x="391" y="265" width="672" height="704" key="search.everywhere.popup" timestamp="1603828732899">
-      <screen x="54" y="23" width="1738" height="1097" />
-    </state>
-    <state x="391" y="265" width="672" height="704" key="search.everywhere.popup/-66.-1057.1920.1057/54.23.1738.1097@54.23.1738.1097" timestamp="1603823787042" />
-    <state x="1812" y="76" width="672" height="678" key="search.everywhere.popup/0.23.1440.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1603663679624" />
-    <state x="279" y="216" width="672" height="563" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1603652548005" />
-    <state x="130" y="-824" width="672" height="678" key="search.everywhere.popup/46.23.1394.877/-242.-1057.1920.1057@-242.-1057.1920.1057" timestamp="1603035081876" />
-    <state x="391" y="265" width="672" height="704" key="search.everywhere.popup/54.23.1738.1097@54.23.1738.1097" timestamp="1603828732899" />
   </component>
 </project>
